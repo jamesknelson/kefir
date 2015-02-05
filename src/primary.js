@@ -87,9 +87,10 @@ Kefir.Emitter = Emitter;
 
 // Keffir.model(x)
 
-function Model(x) {
+function Model(x, is) {
   Property.call(this);
   this._current = x;
+  this._is = is || Object.is;
 }
 
 inherit(Model, Property, {
