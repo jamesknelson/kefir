@@ -101,6 +101,9 @@ inherit(Model, Property, {
     if (x !== this._current) {
       this._send(VALUE, x);
     }
+  },
+  dispose: function() {
+    this._send(END);
   }
 });
 
