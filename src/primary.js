@@ -85,6 +85,33 @@ Kefir.Emitter = Emitter;
 
 
 
+// Keffir.model(x)
+
+function Model(x) {
+  Property.call(this);
+  this._current = x;
+}
+
+inherit(Model, Property, {
+  _name: 'model',
+  get: function() {
+    return this._current;
+  },
+  set: function(x) {
+    this._send(VALUE, x);
+  }
+});
+
+Kefir.model = function(x) {
+  return new Model(x);
+}
+
+
+
+
+
+
+
 // Kefir.never()
 
 var neverObj = new Stream();
