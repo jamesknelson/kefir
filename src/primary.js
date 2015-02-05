@@ -98,7 +98,9 @@ inherit(Model, Property, {
     return this._current;
   },
   set: function(x) {
-    this._send(VALUE, x);
+    if (x !== this._current) {
+      this._send(VALUE, x);
+    }
   }
 });
 
