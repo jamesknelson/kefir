@@ -103,6 +103,9 @@ inherit(Model, Property, {
       this._send(VALUE, x);
     }
   },
+  update: function(fn) {
+    this.set(fn(this.get()));
+  },
   dispose: function() {
     this._send(END);
   }
